@@ -15,7 +15,7 @@
 				$date = Date('y-m-d H:m:s');
 				$imageNewName = Date('y-m-d')."_".$imageName;
 				$destinationFolder = '../uploads/';
-				$allowed = ["png","jpg"];
+				$allowed = ["png","jpg","jpeg","JPG","PNG","JPEG"];
 				if(in_array(explode('/',$imageType)[1], $allowed)){
 					if(move_uploaded_file($imageTmp_name, $destinationFolder.$imageNewName)){
 						$stmt = $conn->prepare("INSERT INTO images(imgName,imgPath,uploadeddate) VALUES(?,?,?)");
